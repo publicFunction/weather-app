@@ -1,0 +1,72 @@
+@use "@/styles/_vars.scss";
+@use "@/styles/_mixins.scss";
+@use "@/styles/_helpers.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+          color 0.5s,
+          background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  font-weight: normal;
+}
+
+.homeHeader {
+  display: grid;
+  grid-template-columns: 0.20fr 0.75fr;
+  padding: 0.5rem 0;
+  .homeHeaderTitle {
+    padding: 0 1rem;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 0.20fr 0.75fr;
+  height: 100%;
+  .aside {
+    display: grid;
+    grid-template-rows: 0.20fr 0.75fr;
+    border-right: 0.0125rem solid  var(--color-border);
+  }
+  .content {
+    display: grid;
+    border-right: 1px solid var(--color-border);
+  }
+}
