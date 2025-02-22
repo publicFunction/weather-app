@@ -6,6 +6,7 @@ import { computed } from 'vue'
 import AppButton from '@/components/Basics/AppButton.vue'
 import InputText from '@/components/Form/InputText.vue'
 import { getAutoCompleteLocationSearch } from '@/services/actions/getAutoCompleteLocationSearch.ts'
+import WeatherCard from '@/components/Basics/WeatherCard.vue'
 
 const locationStore = useCurrentLocationStore()
 const searchResults = useSearchLocationStore()
@@ -44,6 +45,10 @@ const displaySearchResults = computed(() => searchResults.locations)
     <div class="container">
       <h2>DATA FROM SEARCH</h2>
       <p>{{ displaySearchResults }}</p>
+      <div class="p-4 bg-gray-500 flex flex-row gap-6">
+        <WeatherCard icon="CloudSun" dayOfWeek="Mon" :temperature="15" :degOrFar="true" />
+        <WeatherCard icon="Sun" dayOfWeek="Tue" :temperature="25" :degOrFar="false" />
+      </div>
     </div>
   </div>
 </template>
