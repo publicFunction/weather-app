@@ -24,7 +24,6 @@ const convertEpochDateToDayOfWeek = (date: number) => {
   >
     <div class="flex flex-row">
       <component class="w-full h-14" :is="(icons as never)[weatherNumbersToIcons(icon)]" />
-      {{ icon }}
     </div>
     <div class="flex flex-row w-full h-[0.125rem] bg-white opacity-50"></div>
     <div class="flex flex-row text-xl font-bold">{{ convertEpochDateToDayOfWeek(dayOfWeek) }}</div>
