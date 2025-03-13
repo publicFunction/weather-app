@@ -1,10 +1,10 @@
-import { baseQueryParams } from './common.ts'
+import { accuWeatherBaseURL, baseQueryParams } from '@/services/common.ts'
 import { useCurrentLocationStore } from '@/store/currentLocation.ts'
 const locationStore = useCurrentLocationStore()
 
-const searchLocationList = () => {
+const searchLocationList = async () => {
   return fetch(
-    `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?${baseQueryParams}&q=${locationStore.locationName}`,
+    `${accuWeatherBaseURL}/locations/v1/cities/autocomplete?${baseQueryParams}&q=${locationStore.locationName}`,
     {
       method: 'GET',
     },
@@ -15,7 +15,11 @@ const searchLocationList = () => {
       }
       return response.json()
     })
-    .then((data) => data)
+    .then((data) => {
+      return data.filter((location: any) => {
+        return location.Country.ID === 'GB'
+      })
+    })
     .catch((error: Error) => console.error(error))
 }
 

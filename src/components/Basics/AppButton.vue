@@ -5,13 +5,10 @@ defineProps<{
 }>()
 </script>
 <template>
-  <button :type="buttonType">
+  <button
+    :type="buttonType"
+    class="py-2 px-4 bg-amber-50 text-black hover:cursor-pointer hover:bg-[#00dc82] rounded"
+  >
     {{ buttonText }}
   </button>
 </template>
-<style lang="scss">
-button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-}
-</style>

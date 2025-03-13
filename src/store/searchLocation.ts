@@ -9,5 +9,8 @@ export const useSearchLocationStore = defineStore('searchLocation', {
     setSearchResults(locationResults: []) {
       this.locations = locationResults
     },
+    getSearchResults() {
+      return this.locations
+    },
   },
 })
