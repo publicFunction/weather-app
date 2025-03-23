@@ -8,7 +8,6 @@ export const useWeatherResultsStore = defineStore('weatherResults', {
   },
   actions: {
     setFiveDayWeatherResults(weatherResults: WeatherResults) {
-      console.debug('setFiveDayWeatherResults', weatherResults.DailyForecasts)
       this.fiveDayWeather = weatherResults
     },
   },
